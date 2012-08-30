@@ -31,7 +31,7 @@
 
 //// Calibration variables
 // X, Y, Z, E steps per unit - Metric Prusa Mendel with Wade extruder:
-#define _AXIS_STEP_PER_UNIT {80, 80, 3200/1.25,700}
+#define _AXIS_STEP_PER_UNIT {188, 188, 320*16,700}
 // Metric Prusa Mendel with Makergear geared stepper extruder:
 //#define _AXIS_STEP_PER_UNIT {80,80,3200/1.25,1380}
 // MakerGear Hybrid Prusa Mendel:
@@ -40,20 +40,20 @@
 
 
 //// Endstop Settings
-#define ENDSTOPPULLUPS // Comment this out (using // at the start of the line) to disable the endstop pullup resistors
+//#define ENDSTOPPULLUPS // Comment this out (using // at the start of the line) to disable the endstop pullup resistors
 // The pullups are needed if you directly connect a mechanical endswitch between the signal and ground pins.
 //If your axes are only moving in one direction, make sure the endstops are connected properly.
 //If your axes move in one direction ONLY when the endstops are triggered, set [XYZ]_ENDSTOP_INVERT to true here:
-const bool X_ENDSTOP_INVERT = false;
-const bool Y_ENDSTOP_INVERT = false;
-const bool Z_ENDSTOP_INVERT = false;
+const bool X_ENDSTOP_INVERT = true;
+const bool Y_ENDSTOP_INVERT = true;
+const bool Z_ENDSTOP_INVERT = true;
 
 // This determines the communication speed of the printer
 #define BAUDRATE 115200
 //#define BAUDRATE 250000
 
 // Comment out (using // at the start of the line) to disable SD support:
-#define SDSUPPORT
+//#define SDSUPPORT
 
 // Uncomment to make run init.g from SD on boot
 //#define SDINITFILE
@@ -70,11 +70,11 @@ const bool Z_ENDSTOP_INVERT = false;
 // M502 - reverts to the default "factory settings". You still need to store them in EEPROM afterwards if you want to.
 // M503 - Print settings
 // define this to enable eeprom support
-//#define USE_EEPROM_SETTINGS
+#define USE_EEPROM_SETTINGS
 
 // to disable EEPROM Serial responses and decrease program space by ~1000 byte: comment this out:
 // please keep turned on if you can.
-//#define PRINT_EEPROM_SETTING
+#define PRINT_EEPROM_SETTING
 
 //-----------------------------------------------------------------------
 //// ARC Function (G2/G3 Command)
@@ -111,15 +111,15 @@ const bool Z_ENDSTOP_INVERT = false;
 const bool DISABLE_X = false;
 const bool DISABLE_Y = false;
 const bool DISABLE_Z = true;
-const bool DISABLE_E = false;
+const bool DISABLE_E = true;
 
 //-----------------------------------------------------------------------
 // Inverting axis direction
 //-----------------------------------------------------------------------
 const bool INVERT_X_DIR = false;
 const bool INVERT_Y_DIR = false;
-const bool INVERT_Z_DIR = true;
-const bool INVERT_E_DIR = false;
+const bool INVERT_Z_DIR = false;
+const bool INVERT_E_DIR = true;
 
 //-----------------------------------------------------------------------
 //// ENDSTOP SETTINGS:
@@ -132,15 +132,15 @@ const bool INVERT_E_DIR = false;
 //#define ENDSTOPS_ONLY_FOR_HOMING // If defined the endstops will only be used for homing
 
 const bool min_software_endstops = false; //If true, axis won't move to coordinates less than zero.
-const bool max_software_endstops = true; //If true, axis won't move to coordinates greater than the defined lengths below.
+const bool max_software_endstops = false; //If true, axis won't move to coordinates greater than the defined lengths below.
 
 
 //-----------------------------------------------------------------------
 //Max Length for Prusa Mendel, check the ways of your axis and set this Values
 //-----------------------------------------------------------------------
-const int X_MAX_LENGTH = 200;
-const int Y_MAX_LENGTH = 200;
-const int Z_MAX_LENGTH = 100;
+const int X_MAX_LENGTH = 300;
+const int Y_MAX_LENGTH = 300;
+const int Z_MAX_LENGTH = 300;
 
 //-----------------------------------------------------------------------
 //// MOVEMENT SETTINGS
