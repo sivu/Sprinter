@@ -111,13 +111,13 @@ const bool Z_ENDSTOP_INVERT = true;
 const bool DISABLE_X = false;
 const bool DISABLE_Y = false;
 const bool DISABLE_Z = true;
-const bool DISABLE_E = true;
+const bool DISABLE_E = false;
 
 //-----------------------------------------------------------------------
 // Inverting axis direction
 //-----------------------------------------------------------------------
 const bool INVERT_X_DIR = false;
-const bool INVERT_Y_DIR = false;
+const bool INVERT_Y_DIR = true;
 const bool INVERT_Z_DIR = false;
 const bool INVERT_E_DIR = true;
 
@@ -129,18 +129,18 @@ const bool INVERT_E_DIR = true;
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
 
-//#define ENDSTOPS_ONLY_FOR_HOMING // If defined the endstops will only be used for homing
+#define ENDSTOPS_ONLY_FOR_HOMING // If defined the endstops will only be used for homing
 
 const bool min_software_endstops = false; //If true, axis won't move to coordinates less than zero.
-const bool max_software_endstops = false; //If true, axis won't move to coordinates greater than the defined lengths below.
+const bool max_software_endstops = true; //If true, axis won't move to coordinates greater than the defined lengths below.
 
 
 //-----------------------------------------------------------------------
 //Max Length for Prusa Mendel, check the ways of your axis and set this Values
 //-----------------------------------------------------------------------
-const int X_MAX_LENGTH = 300;
-const int Y_MAX_LENGTH = 300;
-const int Z_MAX_LENGTH = 300;
+const int X_MAX_LENGTH = 200;
+const int Y_MAX_LENGTH = 200;
+const int Z_MAX_LENGTH = 200;
 
 //-----------------------------------------------------------------------
 //// MOVEMENT SETTINGS
